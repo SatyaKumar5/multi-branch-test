@@ -5,7 +5,6 @@ pipeline {
             steps {
                     sh """
                     echo "test"
-                    cat Jenkinsfile
                     """
                 }
 
@@ -18,20 +17,7 @@ pipeline {
                 }
             }
         }
-stage('Image Scan') {
-            steps {
-                //Put your image scanning tool 
-                echo 'Image Scanning Start'
-            }
-            post{
-                success{
-                    echo "Image Scanning Successfully"
-                }
-                failure{
-                    echo "Image Scanning Failed"
-                }
-            }
-        }
+
 stage("Deploy to Production"){
             when {
                 branch 'main'
