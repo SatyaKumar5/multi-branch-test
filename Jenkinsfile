@@ -1,11 +1,5 @@
 pipeline {
  
-    environment {
-        
-        //put your own environment variables
-        REGISTRY_URI = 
-}
- 
     stages {
      stage("Build"){
             steps {
