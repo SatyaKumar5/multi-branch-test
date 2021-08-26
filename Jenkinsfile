@@ -34,7 +34,7 @@ stage('Image Scan') {
         }
 stage("Deploy to Production"){
             when {
-                branch 'master'
+                branch 'main'
             }
             steps { 
                 echo "master branch cicd"
