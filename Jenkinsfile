@@ -1,17 +1,10 @@
 pipeline {
- 
-    environment {
-        
-        //put your own environment variables
-        REGISTRY_URI = 
-}
- 
+     agent any
     stages {
      stage("Build"){
             steps {
                     sh """
-                    echo "test"
-                    cat Jenkinsfile
+                    echo "test test test tsdt test test"
                     """
                 }
 
@@ -24,23 +17,10 @@ pipeline {
                 }
             }
         }
-stage('Image Scan') {
-            steps {
-                //Put your image scanning tool 
-                echo 'Image Scanning Start'
-            }
-            post{
-                success{
-                    echo "Image Scanning Successfully"
-                }
-                failure{
-                    echo "Image Scanning Failed"
-                }
-            }
-        }
+
 stage("Deploy to Production"){
             when {
-                branch 'master'
+                branch 'main'
             }
             steps { 
                 echo "master branch cicd"
@@ -71,6 +51,6 @@ stage("Deploy to Staging"){
                 }
             }
         }
-}
+
     }
 }
